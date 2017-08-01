@@ -96,6 +96,7 @@
 				TargetAttributes = {
 					940872FA1F30D5B900A567BA = {
 						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 5EZ85C7X7N;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -262,6 +263,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5EZ85C7X7N;
 				INFOPLIST_FILE = Flashcards/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iDTech.Josh.Flashcards;
@@ -274,6 +276,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5EZ85C7X7N;
 				INFOPLIST_FILE = Flashcards/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iDTech.Josh.Flashcards;
