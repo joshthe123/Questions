@@ -14,6 +14,26 @@ class ViewController: UIViewController, UIPickerViewDataSource,UIPickerViewDeleg
     
     @IBOutlet weak var answerPickerView: UIPickerView!
     
+    @IBAction func nextPlayer(_ sender: Any) {
+        
+        var alert : UIAlertController
+        
+        if CardCollection.instance.checkAnswer(answerPickerView.selectedRow(inComponent: 0)){
+            alert = UIAlertController(title: "Correct", message: "Correct answer.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title:"Yay!", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true)
+            
+        }
+        else{
+            alert = UIAlertController(title: "Incorrect", message: "Incorrect Answer.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Aww.", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true)
+        }
+        CardCollection.instance.nextQuestion()
+        
+        setupCardUI()
+        
+    }
     @IBOutlet weak var questionLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +54,8 @@ class ViewController: UIViewController, UIPickerViewDataSource,UIPickerViewDeleg
         questionTextView.text = CardCollection.instance.currentCard.question
         
         questionLabel.text = "Question \(CardCollection.instance.currentIndex + 1)/\(CardCollection.instance.cards.count)"
+        
+         answerPickerView.reloadAllComponents()
     }
     
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
